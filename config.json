@@ -1,0 +1,15 @@
+{
+    "env": "dev",
+    "isRestart": true,
+    "apiKey": "",
+    "apiSecret": "",
+    "proxyIp": "127.0.0.1",
+    "proxy": 1087,
+    "listenPort": 3000,
+    "leverge": 20,
+    "quantity": 1,
+    "teleBotToken": "5039617435:AAG9lgyAM-t7LwI-TfVS39pk31W6XlUrz9w",
+    "chat_id": [
+        -1001784840574
+    ]
+}
