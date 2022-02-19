@@ -8,6 +8,10 @@ tv 信号 到 tg推送播报机器人【集成】
 
 `scp -i /Users/topbrids/cert/testbbs.pem package.json root@101.32.178.79:/root/tv_gen_order`
 
+`scp -i /Users/topbrids/cert/testbbs.pem index.js root@101.32.178.79:/root/tv_gen_order`
+
+`scp -i /Users/topbrids/cert/testbbs.pem app/message.js root@101.32.178.79:/root/tv_gen_order/app`
+
 ```
 {
 "ticker":"{{ticker}}",
