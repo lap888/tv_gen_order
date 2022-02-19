@@ -4,7 +4,9 @@
   "description": "topbrids@gmail.com",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "restart": "pm2 restart index.js --log-date-format='YYYY-MM-DD HH:mm:ss:SSS'",
+    "start": "pm2 restart index.js --log-date-format='YYYY-MM-DD HH:mm:ss:SSS'",
+    "stop": "pm2 restart index.js"
   },
   "keywords": [],
   "author": "",
