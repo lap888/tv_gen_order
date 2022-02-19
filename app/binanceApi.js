@@ -3,7 +3,7 @@ const { Spot } = require('@binance/connector');
 
 
 const fs = require('fs');
-let configData = fs.readFileSync("../config.json");
+let configData = fs.readFileSync("./config.json");
 let configJson = JSON.parse(configData);
 let cf = "";
 let cs = "";

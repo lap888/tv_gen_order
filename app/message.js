@@ -8,16 +8,37 @@ if (configJson.env == "dev") {
     }
     tgParams.http_proxy = http_proxy
 }
+
 let tgApi = new telegram(tgParams)
 let mp = new telegram.GetUpdateMessageProvider()
 tgApi.setMessageProvider(mp)
 
 const init_tg = () => {
     tgApi.start().then(() => {
-        console.log('initTG API is started')
+        console.log('init tg api is started')
     }).catch(res => {
         console.log(res)
     })
+}
+
+const get_account = () => {
+    return new Promise((resolve, reject) => {
+        cf.account().then(res => {
+            resolve(res);
+        }).catch(err => {
+            reject(err)
+        });
+    });
+}
+
+const set_leverage = (symbol, leverage) => {
+    return new Promise((resolve, reject) => {
+        cf.leverage(symbol, leverage).then(res => {
+            resolve(res);
+        }).catch(err => {
+            reject(err)
+        });
+    });
 }
 
 const send_msg = (msg) => {
@@ -177,5 +198,7 @@ module.exports = {
     sell_close,
     init_tg,
     send_msg,
-    msg_on
+    msg_on,
+    get_account,
+    set_leverage
 }

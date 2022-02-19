@@ -7,7 +7,7 @@
     "proxy": 1087,
     "listenPort": 3000,
     "leverge": 20,
-    "quantity": 1,
+    "quantity": 0.003,
     "teleBotToken": "5039617435:AAG9lgyAM-t7LwI-TfVS39pk31W6XlUrz9w",
     "chat_id": [
         -1001784840574

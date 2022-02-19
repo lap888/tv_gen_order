@@ -10,6 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@binance/connector": "^1.7.0",
     "axios": "^0.26.0",
     "binance-futures-connector": "^1.0.3",
     "express": "^4.17.3",
