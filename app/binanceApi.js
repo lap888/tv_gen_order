@@ -1,4 +1,4 @@
-const { Future } = require('binance-futures-connector');
+const { Future,TA } = require('binance-futures-connector');
 const { Spot } = require('@binance/connector');
 
 
@@ -22,5 +22,6 @@ cs = new Spot(apiKey, apiSecret, { ip: proxyIp, port: proxy });
 module.exports = {
     cf,
     cs,
+    TA,
     configJson
 }

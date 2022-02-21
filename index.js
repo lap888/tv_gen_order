@@ -23,29 +23,29 @@ async function core(ticker, action, msg = {}) {
         }
     });
     //
-    await set_leverage(ticker, configJson.leverge);
-    console.log(`修改杠杆:${ticker},${configJson.leverge}`)
-    //
-    if (action == 'buy') {
-        //开多
-        let r1 = await buy(ticker, configJson.quantity, -1)
-        console.log(`买入开多=>:${r1.status}`)
-        if (posS != null) {
-            //平空
-            let r2 = await sell_close(ticker, -Number(posS.positionAmt), -1)
-            console.log(`买平空=>:${r2.status}`)
-        }
-    }
-    if (action == 'sell') {
-        //开空
-        let r3 = await sell(ticker, configJson.quantity, -1)
-        console.log(`卖出开空=>:${r3.status}`)
-        if (posL != null) {
-            //平多
-            let r4 = await buy_close(ticker, Number(posL.positionAmt), -1)
-            console.log(`卖出平多=>:${r4.status}`)
-        }
-    }
+    // await set_leverage(ticker, configJson.leverge);
+    // console.log(`修改杠杆:${ticker},${configJson.leverge}`)
+    // //
+    // if (action == 'buy') {
+    //     //开多
+    //     let r1 = await buy(ticker, configJson.quantity, -1)
+    //     console.log(`买入开多=>:${r1.status}`)
+    //     if (posS != null) {
+    //         //平空
+    //         let r2 = await sell_close(ticker, -Number(posS.positionAmt), -1)
+    //         console.log(`买平空=>:${r2.status}`)
+    //     }
+    // }
+    // if (action == 'sell') {
+    //     //开空
+    //     let r3 = await sell(ticker, configJson.quantity, -1)
+    //     console.log(`卖出开空=>:${r3.status}`)
+    //     if (posL != null) {
+    //         //平多
+    //         let r4 = await buy_close(ticker, Number(posL.positionAmt), -1)
+    //         console.log(`卖出平多=>:${r4.status}`)
+    //     }
+    // }
 
 }
 

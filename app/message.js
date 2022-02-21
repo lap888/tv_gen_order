@@ -1,4 +1,4 @@
-let { cf, cs, configJson } = require('../app/binanceApi')
+let { cf, cs, TA, configJson } = require('../app/binanceApi')
 const telegram = require('telegram-bot-api') //2.0.0
 let tgParams = { token: configJson.teleBotToken }
 if (configJson.env == "dev") {
@@ -200,5 +200,7 @@ module.exports = {
     send_msg,
     msg_on,
     get_account,
-    set_leverage
+    set_leverage,
+    TA,
+    cf
 }

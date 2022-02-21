@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "restart": "pm2 restart index.js --log-date-format='YYYY-MM-DD HH:mm:ss:SSS'",
-    "start": "pm2 restart index.js --log-date-format='YYYY-MM-DD HH:mm:ss:SSS'",
-    "stop": "pm2 restart index.js"
+    "start": "pm2 start index.js --log-date-format='YYYY-MM-DD HH:mm:ss:SSS'",
+    "stop": "pm2 stop index.js"
   },
   "keywords": [],
   "author": "",
@@ -14,7 +14,7 @@
   "dependencies": {
     "@binance/connector": "^1.7.0",
     "axios": "^0.26.0",
-    "binance-futures-connector": "^1.0.3",
+    "binance-futures-connector": "^1.0.5",
     "express": "^4.17.3",
     "https-proxy-agent": "^5.0.0",
     "telegram-bot-api": "^2.0.1",
