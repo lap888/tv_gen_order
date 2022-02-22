@@ -8,6 +8,8 @@
     "listenPort": 3000,
     "leverge": 20,
     "quantity": 0.003,
+    "pft":0.015,
+    "pftBack":0.005,
     "teleBotToken": "5039617435:AAG9lgyAM-t7LwI-TfVS39pk31W6XlUrz9w",
     "chat_id": [
         -1001784840574

@@ -202,5 +202,6 @@ module.exports = {
     get_account,
     set_leverage,
     TA,
-    cf
+    cf,
+    configJson
 }
