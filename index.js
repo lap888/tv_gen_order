@@ -1,4 +1,4 @@
-let { send_msg, init_tg, buy, buy_close, sell, sell_close, get_account, set_leverage, cf, configJson } = require('./app/message')
+let { send_msg, init_tg, buy, buy_close, sell, sell_close, get_account, set_leverage,msg_on, cf, configJson } = require('./app/message')
 
 const express = require('express')
 const app = express()
