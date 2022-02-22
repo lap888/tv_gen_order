@@ -1,5 +1,5 @@
 {
-    "env": "dev",
+    "env": "prod",
     "isRestart": true,
     "apiKey": "",
     "apiSecret": "",
