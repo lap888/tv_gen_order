@@ -70,7 +70,7 @@ app.post("/api/botmsg", function (req, res) {
 let onPftData = {}
 let onPftData2 = {}
 //监听收益
-onPft = async () => {
+async function onPft() {
     let acc = await get_account();
     let pos = [];
     acc.data.positions.map(v => {
@@ -96,10 +96,11 @@ onPft = async () => {
                     }
                     //回测止盈
                     if (Number(pData.data.price) < onPftData[v.symbol] * (1 - configJson.pftBack)) {
-                        let r2 = await buy_close(v.symbol, Number(v.positionAmt), -1)
-                        onPftData[v.symbol] = 0;
-                        send_msg(`多单--回撤止盈平仓`)
-                        console.log(`多单--回撤止盈平仓`, r2.status)
+                        buy_close(v.symbol, Number(v.positionAmt), -1).then(r2 => {
+                            onPftData[v.symbol] = 0;
+                            send_msg(`多单--回撤止盈平仓`)
+                            console.log(`多单--回撤止盈平仓`, r2.status)
+                        })
                     }
                 }
             }
@@ -119,10 +120,11 @@ onPft = async () => {
                     }
                     //回测止盈
                     if (Number(pData.data.price) > onPftData2[v.symbol] * (1 - configJson.pftBack)) {
-                        let r3 = await sell_close(v.symbol, -Number(v.positionAmt), -1)
-                        onPftData2[v.symbol] = 0;
-                        send_msg(`空单--回撤止盈平仓`)
-                        console.log(`空单--回撤止盈平仓`, r3.status)
+                        sell_close(v.symbol, -Number(v.positionAmt), -1).then(r3 => {
+                            onPftData2[v.symbol] = 0;
+                            send_msg(`空单--回撤止盈平仓`)
+                            console.log(`空单--回撤止盈平仓`, r3.status)
+                        })
                     }
                 }
             }
