@@ -60,7 +60,7 @@ const msg_on = () => {
         // Send text message
         tgApi.sendMessage({
             chat_id: chat_id,
-            text: 'I got following message from you: *' + update.message + '*',
+            text: 'I got following message from you: *' + update.message.text + '*' + chat_id,
             parse_mode: 'Markdown',
             reply_markup: {
                 inline_keyboard: [
