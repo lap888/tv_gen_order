@@ -8,6 +8,7 @@ app.use(express.json())
 // let configData = fs.readFileSync("config.json");
 // let configJson = JSON.parse(configData);
 let listenPort = configJson.listenPort;
+let symbol = "";
 init_tg()
 
 async function core(ticker, action, msg = {}) {
@@ -55,6 +56,7 @@ app.post("/api/botmsg", function (req, res) {
     let data = { code: 200, message: 'ok' }
     try {
         let r = req.body
+        symbol = r.ticker;
         core(r.ticker, r.action, r)
         console.log(r)
         res.json(r);
@@ -97,7 +99,7 @@ onPft = async () => {
                         let r2 = await buy_close(v.symbol, Number(v.positionAmt), -1)
                         onPftData[v.symbol] = 0;
                         send_msg(`多单--回撤止盈平仓`)
-                        console.log(`多单--回撤止盈平仓`,r2.status)
+                        console.log(`多单--回撤止盈平仓`, r2.status)
                     }
                 }
             }
@@ -120,7 +122,7 @@ onPft = async () => {
                         let r3 = await sell_close(v.symbol, -Number(v.positionAmt), -1)
                         onPftData2[v.symbol] = 0;
                         send_msg(`空单--回撤止盈平仓`)
-                        console.log(`空单--回撤止盈平仓`,r3.status)
+                        console.log(`空单--回撤止盈平仓`, r3.status)
                     }
                 }
             }
@@ -135,7 +137,9 @@ app.listen(listenPort, () => {
 
 setInterval(() => {
     try {
-        onPft()
+        if (symbol != "") {
+            onPft()
+        }
     } catch (err) {
         send_msg(err)
         console.log(err)
