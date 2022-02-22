@@ -56,7 +56,7 @@ const send_msg = (msg) => {
 const msg_on = () => {
     tgApi.on('update', (update) => {
         const chat_id = update.message.chat.id
-
+        console.log(update.message)
         // Send text message
         tgApi.sendMessage({
             chat_id: chat_id,

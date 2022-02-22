@@ -131,7 +131,7 @@ async function onPft() {
         });
     });
 }
-
+msg_on()
 //监听
 app.listen(listenPort, () => {
     console.log(`本地服务监听地址:http://127.0.0.1:${listenPort}`)
