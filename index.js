@@ -4,9 +4,6 @@ const express = require('express')
 const app = express()
 app.use(express.urlencoded({ extended: false }))
 app.use(express.json())
-// const fs = require('fs')
-// let configData = fs.readFileSync("config.json");
-// let configJson = JSON.parse(configData);
 let listenPort = configJson.listenPort;
 let symbol = "";
 init_tg()

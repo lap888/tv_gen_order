@@ -29,3 +29,7 @@ tv 信号 到 tg推送播报机器人【集成】
 
 微信: wkc19891
 邮箱: topbrids@gmail.com
+
+## 福利群
+
+![WechatIMG1](/assets/WechatIMG1_cie6zoiln.jpeg)![WechatIMG2](/assets/WechatIMG2_pgur0n1cg.jpeg)
